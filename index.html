@@ -8,18 +8,32 @@
     body {
       background: linear-gradient(to bottom, #FFF9C4, #FFECB3);
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      text-align: center;
       margin: 0;
       padding: 0;
     }
+    header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background-color: #FFF176;
+    }
     .logo {
-      width: 120px;
-      position: absolute;
-      top: 20px;
-      left: 20px;
+      width: 140px;
+      margin-right: 20px;
+    }
+    .school-info {
+      font-size: 1.5em;
+      color: #D84315;
+      font-weight: bold;
+    }
+    .school-info small {
+      display: block;
+      font-size: 0.6em;
+      color: #5D4037;
     }
     .container {
-      padding: 100px 20px 40px;
+      text-align: center;
+      padding: 40px 20px;
     }
     h1 {
       color: #FF5722;
@@ -67,16 +81,34 @@
       0% { transform: translateY(-100px); opacity: 1; }
       100% { transform: translateY(100vh); opacity: 0; }
     }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #FFF176;
+      color: #5D4037;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
-  <img src="lg_Sch.png" alt="Logo Sekolah" class="logo" />
+  <header>
+    <img src="lg_Sch.png" alt="Logo Sekolah" class="logo" />
+    <div class="school-info">
+      UPT SDN 200 Gresik
+      <small>Jl. Raya Kedamean No. 45 Kedamean Gresik</small>
+    </div>
+  </header>
+
   <div class="container">
-    <h1>Status Kenaikan Kelas<br>Kelas 3A - UPT SD Negeri 200 Gresik</h1>
+    <h1>Status Kenaikan Kelas<br>Kelas 3A</h1>
     <input type="text" id="nisInput" placeholder="Masukkan NIS" />
     <button onclick="checkStatus()">Cek</button>
     <div id="result"></div>
   </div>
+
+  <footer>
+    © 2023 UPT SD Negeri 200 Gresik - Sistem Informasi Kenaikan Kelas
+  </footer>
 
   <script>
     const students = [
