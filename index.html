@@ -129,6 +129,8 @@
     © 2023 UPT SD Negeri 200 Gresik - Sistem Informasi Kenaikan Kelas
   </footer>
 
+  <audio id="failAudio" src="TN_Kelas.opus" preload="auto"></audio>
+
   <script>
     const students = [
       { name: "ACHMAD BHAKTIAR DWI ADIANTO", nis: "1612", status: "Naik Kelas" },
@@ -157,6 +159,7 @@
       const nis = document.getElementById("nisInput").value.trim();
       const student = students.find(s => s.nis === nis);
       const resultDiv = document.getElementById("result");
+      const audio = document.getElementById("failAudio");
       resultDiv.innerHTML = "";
 
       document.querySelectorAll(".confetti, .sad-rain").forEach(e => e.remove());
@@ -175,6 +178,8 @@
           showEffect("🎉🎊✨", "confetti");
         } else {
           showEffect("😢💧😭", "sad-rain");
+          audio.currentTime = 0;
+          audio.play();
         }
       } else {
         resultDiv.innerHTML = "<p style='color:red;'>Siswa tidak ditemukan.</p>";
